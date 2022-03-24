@@ -5,8 +5,11 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon server.js",
-    "dev2": "nodemon server2.js"
+    "start": "concurrently npm:watch:*",
+    "watch:devStart": "nodemon server.js",
+    "watch:devStartAuth": "nodemon authServer.js",
+    "devStart": "nodemon server.js",
+    "devStartAuth": "nodemon authServer.js"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +20,7 @@
     "jsonwebtoken": "^8.5.1"
   },
   "devDependencies": {
+    "concurrently": "^7.0.0",
     "nodemon": "^2.0.15"
   }
 }
